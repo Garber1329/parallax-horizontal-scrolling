@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Horizontal-parallax</title>
+
+	<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+	<script src="libs/swiper/swiper-bundle.min.js" defer></script>
+	<script src="libs/particles/particles.js" defer></script>
+
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/main.js" defer></script>
+</head>
+<body>
+	<div class="swiper slider">
+		<div class="swiper-wrapper slider__wrapper">
+			<div class="swiper-slide slider__item">
+				<div class="slider__layer" data-swiper-parallax="35%" style="background: url('img/screen-1/layer-back.jpg');"></div>
+				<div class="slider__layer" data-swiper-parallax="25%" style="background: url('img/screen-1/layer-middle.png');"></div>
+				<canvas class="particles slider__layer" data-swiper-parallax="20%" data-color="#D2B37C"></canvas>
+				<div class="slider__layer" data-swiper-parallax="15%" style="background: url('img/screen-1/layer-front.png');"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__layer" data-swiper-parallax="40%" style="background: url('img/screen-2/layer-back.jpg');"></div>
+				<div class="slider__layer" data-swiper-parallax="34%" style="background: url('img/screen-2/layer-geralt.png');"></div>
+				<div class="slider__layer" data-swiper-parallax="30%" style="background: url('img/screen-2/layer-enifer.png');"></div>
+				<canvas class="particles slider__layer" data-swiper-parallax="24%" data-color="#C6D9EA"></canvas>
+				<div class="slider__layer" data-swiper-parallax="15%" style="background: url('img/screen-2/layer-front.png');"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__layer" data-swiper-parallax="50%" style="background: url('img/screen-3/layer-back.jpg');"></div>
+				<div class="slider__layer" data-swiper-parallax="35%" style="background: url('img/screen-3/layer-middle.png');"></div>
+				<div class="slider__layer" data-swiper-parallax="25%" style="background: url('img/screen-3/layer-ciri.png');"></div>
+				<canvas class="particles slider__layer" data-swiper-parallax="24%" data-color="#C7514D"></canvas>
+				<div class="slider__layer" data-swiper-parallax="15%" style="background: url('img/screen-3/layer-front.png');"></div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="music">
+		<audio id="myAudio" autoplay loop>
+			<source src="libs/music/piotr_musial.mp3" type="audio/mpeg">
+		</audio>
+		<div id="audioController" class="audioController">
+			<button id="playButton" class="btn__play"></button>
+			<div id="volumeControl" class="volume__container">
+				<input type="range" min="0" max="100" value="50" class="volume__control" id="myRange">
+			</div>
+		</div>
+		<!-- <a href="#" class="button">
+			<span class="icon"></span>
+			<span class="text">Hakuna Matata</span>
+		</a> -->
+	</section>
+</body>
+</html>

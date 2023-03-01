@@ -1,0 +1,175 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body, html{
+	height: 100%;
+	background: #000;
+}
+
+.slider{
+	height: 100%;
+}
+
+.slider__wrapper{
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+
+.slider__item{
+	overflow: hidden;
+	position: relative;
+	will-change: transform;
+}
+
+.slider__layer{
+	position: absolute;
+	inset: 0;
+	background-size: cover!important;
+	background-position: center!important;
+	will-change: transform;
+}
+
+.slider__layer::before{
+	content: '';
+	position: absolute;
+	inset: 0;
+	box-shadow: inset 0 0 250px rgb(0 0 0 / .4);
+}
+
+
+.audioController{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	z-index: 5;
+	bottom: 20px;
+	right: 20px;
+	/* background: rgb(255, 255, 255);  */
+	opacity: .4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity .3s ease;
+}
+
+#audioController:hover{
+	opacity: 1;
+	transition: opacity .3s ease;
+}
+
+#playButton {
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+}
+
+#volumeControl {
+	position: absolute;
+	width: 100px;
+	height: 20px;
+	display: none;
+	left: -100px
+}
+
+.volume__control {
+	width: 100%;
+	height: 10px;
+	outline: none;
+	opacity: 0.7;
+	transition: opacity .2s;
+}
+
+.volume__control:hover {
+	opacity: 1;
+}
+
+.btn__play{
+	background-image: url('/img/pause.png');
+	background-size: cover;
+	height: 50px;
+	width: 50px;
+}
+
+.btn__pause{
+	background-image: url('/img/play.png');
+	background-size: cover;
+	height: 50px;
+	width: 50px;
+}
+
+
+.slidecontainer {
+	width: 100%;
+}
+
+.volume__control {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 10px;
+	border-radius: 10px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;/* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: .2s;/* 0.2 seconds transition on hover */
+	transition: opacity .2s;
+}
+
+.volume__control:hover {
+	opacity: 1;
+}
+
+.volume__control::-webkit-slider-thumb {
+	-webkit-appearance: none;/* Override default look */
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #818181;
+	cursor: pointer;
+}
+
+.volume__control::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	background: #868686;
+	cursor: pointer;
+}
+
+/* .button {
+	background-color: #099;
+	color: white;
+	text-decoration: none;
+	border-radius: 60px;
+	height: 32px;
+	display: inline-flex;
+	align-items: center;
+	overflow: hidden;
+	width: auto;
+	max-width: 32px;
+	-webkit-transition: max-width 0.5s;
+	transition: max-width 0.5s;
+}
+
+.button:hover {
+	max-width: 300px;
+}
+
+.icon {
+	font-family: "Font Awesome 5 Free";
+	font-size: 16px;
+	margin-right: 15px;
+	padding: 0px 8px;
+	display: flex;
+	align-items: center;
+}
+
+.text {
+	white-space: nowrap;
+	padding-right: 15px;
+} */
