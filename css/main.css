@@ -4,6 +4,12 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+	font-family: ceveat_f;
+	src: url(../fonts/Caveat-Bold.ttf);
+	font-weight: 700;
+}
+
 body, html{
 	height: 100%;
 	background: #000;
@@ -39,45 +45,51 @@ body, html{
 	box-shadow: inset 0 0 250px rgb(0 0 0 / .4);
 }
 
+/* Audio */
 
-.audioController{
-	width: 70px;
-	height: 70px;
+.audio__controller{
+	height: 50px;
+	max-width: 50px;
 	position: absolute;
 	z-index: 5;
 	bottom: 20px;
-	right: 20px;
-	/* background: rgb(255, 255, 255);  */
-	opacity: .4;
+	left: 20px;
+	background: rgb(255, 255, 255); 
+	opacity: .1;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	transition: opacity .3s ease;
+	justify-content: space-between;
+	border-radius: 60px;
+	width: auto;
+	transition: all .5s ease;overflow: hidden;
 }
 
-#audioController:hover{
-	opacity: 1;
-	transition: opacity .3s ease;
+.audio__controller:hover{
+	opacity: .7;
+	transition: all .5s ease;
+	max-width: 400px!important;
 }
 
 #playButton {
-	height: 50px;
-	width: 50px;
+	position: fixed;
+	display: block;
+	height: 25px;
+	width: 25px;
 	cursor: pointer;
 	border: none;
-	border-radius: 50%;
+	margin: 0 13px;
 }
 
 #volumeControl {
-	position: absolute;
+	display: block;
 	width: 100px;
 	height: 20px;
-	display: none;
-	left: -100px
+	margin-left: 60px;
+	margin-right: 15px;
 }
 
 .volume__control {
-	width: 100%;
+	width: 100px;
 	height: 10px;
 	outline: none;
 	opacity: 0.7;
@@ -89,34 +101,27 @@ body, html{
 }
 
 .btn__play{
-	background-image: url('/img/pause.png');
+	background: url('/img/pause.png');
 	background-size: cover;
-	height: 50px;
-	width: 50px;
+	transition: background .2s ease;
 }
 
 .btn__pause{
-	background-image: url('/img/play.png');
+	background: url('/img/play.png');
 	background-size: cover;
-	height: 50px;
-	width: 50px;
-}
-
-
-.slidecontainer {
-	width: 100%;
+	transition: background .2s ease;
 }
 
 .volume__control {
 	-webkit-appearance: none;
 	appearance: none;
-	width: 100%;
+	width: 100px;
 	height: 10px;
 	border-radius: 10px;
 	background: #d3d3d3;
 	outline: none;
-	opacity: 0.7;/* Set transparency (for mouse-over effects on hover) */
-	-webkit-transition: .2s;/* 0.2 seconds transition on hover */
+	opacity: 0.7;
+	-webkit-transition: .2s;
 	transition: opacity .2s;
 }
 
@@ -125,12 +130,12 @@ body, html{
 }
 
 .volume__control::-webkit-slider-thumb {
-	-webkit-appearance: none;/* Override default look */
+	-webkit-appearance: none;
 	appearance: none;
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	background: #818181;
+	background: #000000;
 	cursor: pointer;
 }
 
@@ -141,35 +146,30 @@ body, html{
 	cursor: pointer;
 }
 
-/* .button {
-	background-color: #099;
-	color: white;
-	text-decoration: none;
-	border-radius: 60px;
-	height: 32px;
-	display: inline-flex;
-	align-items: center;
-	overflow: hidden;
-	width: auto;
-	max-width: 32px;
-	-webkit-transition: max-width 0.5s;
-	transition: max-width 0.5s;
+/* Modal window */
+
+.modal {
+	display: block;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	transition: all 5s ease;
+	opacity: 1;
 }
 
-.button:hover {
-	max-width: 300px;
+.modal-content {
+	font-family: 'ceveat_f', cursive;
+	font-size: 60px;
+	text-align: center;
+	color: #fff;
+	width: 40%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
-
-.icon {
-	font-family: "Font Awesome 5 Free";
-	font-size: 16px;
-	margin-right: 15px;
-	padding: 0px 8px;
-	display: flex;
-	align-items: center;
-}
-
-.text {
-	white-space: nowrap;
-	padding-right: 15px;
-} */

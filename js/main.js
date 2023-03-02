@@ -7,8 +7,6 @@ new Swiper('.swiper', {
 
 let audio = document.getElementById("myAudio");
 let button = document.getElementById("playButton");
-let audioController = document.getElementById("audioController");
-let volumeControl = document.getElementById("volumeControl");
 let myRange = document.getElementById("myRange");
 
 button.addEventListener("click", function() {
@@ -21,14 +19,19 @@ button.addEventListener("click", function() {
     }
 });
 
-audioController.addEventListener("mouseover", function() {
-    volumeControl.style.display = "block";
-});
-
-audioController.addEventListener("mouseout", function() {
-    volumeControl.style.display = "none";
-});
-
 myRange.addEventListener("input", function() {
 	audio.volume = myRange.value / 100;
+});
+
+window.onload = function() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+};
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "F11") {
+        var modal = document.getElementById("myModal");
+        modal.style.opacity = "0";
+        audio.play();
+    }
 });

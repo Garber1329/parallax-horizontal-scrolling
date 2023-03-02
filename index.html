@@ -41,19 +41,22 @@
 	</div>
 	
 	<section class="music">
-		<audio id="myAudio" autoplay loop>
+		<audio id="myAudio" loop>
 			<source src="libs/music/piotr_musial.mp3" type="audio/mpeg">
 		</audio>
-		<div id="audioController" class="audioController">
+		<div id="audioController" class="audio__controller">
 			<button id="playButton" class="btn__play"></button>
 			<div id="volumeControl" class="volume__container">
 				<input type="range" min="0" max="100" value="50" class="volume__control" id="myRange">
 			</div>
 		</div>
-		<!-- <a href="#" class="button">
-			<span class="icon"></span>
-			<span class="text">Hakuna Matata</span>
-		</a> -->
 	</section>
+
+	<div id="myModal" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<p>Press F11, scroll through the pictures and relax</p>
+		</div>
+	</div>
 </body>
 </html>
